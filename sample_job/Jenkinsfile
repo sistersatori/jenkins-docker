@@ -11,7 +11,7 @@ pipeline {
             logRotator(
                 daysToKeepStr: '1',
                 numToKeepStr: '1',
-                artifactdaysToKeepStr: '1',
+                artifactDaysToKeepStr: '1',
                 artifactNumToKeepStr: '1'
             )
         )
