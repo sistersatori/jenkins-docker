@@ -22,10 +22,10 @@ pipeline {
                 sh '/app/job.sh'
             }
         }
-        post {
-            success {
-                arvhiveArtifacts "*.txt"
-            }
+    }
+    post {
+        success {
+            arvhiveArtifacts "*.txt"
         }
     }
 }
