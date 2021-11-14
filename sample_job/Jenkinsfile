@@ -6,7 +6,9 @@ pipeline {
                 sh 'bash /app/job.sh'
             }
             post {
-                archiveArtifacts *.txt
+                success {
+                    archiveArtifacts *.txt
+                }
             }
         }
     }
