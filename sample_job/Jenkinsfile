@@ -25,7 +25,7 @@ pipeline {
     }
     post {
         success {
-            arvhiveArtifacts "*.txt"
+            archiveArtifacts "*.txt"
         }
     }
 }
