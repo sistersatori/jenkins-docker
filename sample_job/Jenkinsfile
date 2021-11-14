@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'bash /app/job.sh'
+            }
+            post {
+                archiveArtifacts *.txt
+            }
+        }
+    }
+}
