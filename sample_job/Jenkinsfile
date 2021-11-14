@@ -1,9 +1,25 @@
 pipeline {
-    agent any
+    agent {
+        dockerfile {
+            filename 'Dockerfile'
+            dir 'sample_job'
+            args '-u root'
+        }
+    }
+    options {
+        buildDiscarder(
+            logRotator(
+                daysToKeepStr: '1',
+                numToKeepStr: '1',
+                artifactdaysToKeepStr: '1',
+                artifactNumToKeepStr: '1'
+            )
+        )
+    }
     stages {
         stage('Build') {
             steps {
-                sh 'bash /app/job.sh'
+                sh '/app/job.sh'
             }
             post {
                 success {
