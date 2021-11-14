@@ -21,6 +21,11 @@ pipeline {
             steps {
                 sh '/app/job.sh'
             }
+            post {
+                success {
+                    arvhiveArtifacts "*.txt"
+                }
+            }
         }
     }
 }
