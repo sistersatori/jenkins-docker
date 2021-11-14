@@ -3,7 +3,6 @@ pipeline {
         dockerfile {
             filename 'Dockerfile'
             dir 'sample_job'
-            args '-u root'
         }
     }
     options {
